@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ Security Alert</title>
+    
+    
+    <link rel="icon" type="image/png" href="https://pngup.com/D7ak/icon.png">
+    <link rel="shortcut icon" type="image/png" href="https://pngup.com/D7ak/icon.png">
+    <link rel="apple-touch-icon" href="https://pngup.com/D7ak/icon.png">
+    
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=VT323&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url('https://pngup.com/Ak9D/hd.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            font-family: 'Share Tech Mono', 'Courier New', monospace;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        #bg-music {
+            display: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 90%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding-top: 10px;
+            padding-bottom: 15px;
+        }
+
+        .top-section {
+            padding-top: 0;
+            margin-top: -5px;
+        }
+
+        .title {
+            font-size: 52px;
+            font-weight: 900;
+            font-family: 'Orbitron', 'Share Tech Mono', monospace;
+            color: #00f5ff;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.8), 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(0, 245, 255, 0.3), 0 0 80px rgba(0, 245, 255, 0.1);
+            animation: glitch 2s infinite;
+            line-height: 1;
+        }
+
+        .middle-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            padding: 50px 0 60px 0;
+            margin-top: 40px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-family: 'Orbitron', 'Share Tech Mono', monospace;
+            color: #00f5ff;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.6), 0 0 30px rgba(0, 245, 255, 0.3);
+            animation: glitch 3s infinite;
+            margin-bottom: 8px;
+        }
+
+        .message-opps {
+            color: #00f5ff;
+            font-size: 22px;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 30px rgba(0, 245, 255, 0.2);
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
+
+        .message-encrypted {
+            color: #00f5ff;
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.6), 0 0 30px rgba(0, 245, 255, 0.3);
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .message-center {
+            color: #00f5ff;
+            font-size: 20px;
+            font-family: 'Share Tech Mono', monospace;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 35px;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.1);
+        }
+
+        .bottom-section {
+            padding-bottom: 0;
+            margin-bottom: -5px;
+        }
+
+        .contact .label {
+            font-size: 14px;
+            color: #00f5ff;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Orbitron', monospace;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .contact .email {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00f5ff;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(0, 245, 255, 0.2);
+            letter-spacing: 2px;
+        }
+
+        .contact .safe {
+            font-size: 15px;
+            color: #00f5ff;
+            opacity: 0.6;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            font-family: 'Share Tech Mono', monospace;
+            text-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); opacity: 1; text-shadow: 0 0 10px #00f5ff, 0 0 20px #00f5ff; }
+            1% { transform: translate(-3px, 2px); opacity: 0.9; text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+            2% { transform: translate(3px, -2px); opacity: 0.95; text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+            3% { transform: translate(-2px, 1px); opacity: 0.85; text-shadow: 0 0 30px #00f5ff; }
+            4% { transform: translate(2px, -1px); opacity: 1; text-shadow: 0 0 20px #00f5ff, 0 0 40px #00f5ff; }
+            5% { transform: translate(0); opacity: 1; text-shadow: 0 0 10px #00f5ff, 0 0 30px #00f5ff; }
+            100% { transform: translate(0); opacity: 1; text-shadow: 0 0 10px #00f5ff, 0 0 30px #00f5ff; }
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 32px; letter-spacing: 6px; }
+            .subtitle { font-size: 18px; letter-spacing: 4px; }
+            .message-opps { font-size: 17px; }
+            .message-encrypted { font-size: 18px; }
+            .message-center { font-size: 16px; padding: 12px 25px; }
+            .contact .email { font-size: 22px; }
+            .middle-section { padding: 30px 0 40px 0; margin-top: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .title { font-size: 24px; letter-spacing: 4px; }
+            .subtitle { font-size: 14px; letter-spacing: 3px; }
+            .message-opps { font-size: 14px; }
+            .message-encrypted { font-size: 15px; }
+            .message-center { font-size: 14px; padding: 10px 20px; }
+            .contact .email { font-size: 18px; }
+            .middle-section { padding: 20px 0 25px 0; margin-top: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div class="top-section">
+            <div class="title">⚠️ SECURITY ALERT</div>
+        </div>
+        <div class="middle-section">
+            <div class="subtitle">🔐 SYSTEM BREACH DETECTED</div>
+            <div class="message-opps">Oopppsss, xi_sem in here</div>
+            <div class="message-encrypted"><b>This site hasben hacked</b></div>
+            <div class="message-center">How do I handle this?</div>
+        </div>
+        <div class="bottom-section">
+            <div class="contact">
+                <span class="label">Take Over BY</span>
+                <span class="email">XI_SEM</span>
+                <div class="safe">Your data will remain safe with us</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bg-music');
+            if (audio) {
+                audio.play().catch(function(e) {
+                    console.log('Autoplay blocked:', e);
+                });
+            }
+        });
+
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('bg-music');
+            if (audio) {
+                audio.play().catch(function(e) {
+                    console.log('Autoplay blocked, waiting for user interaction:', e);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
